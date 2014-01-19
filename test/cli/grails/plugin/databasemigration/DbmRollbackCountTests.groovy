@@ -49,7 +49,7 @@ class DbmRollbackCountTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-rollback-count'], false)
-		assertTrue output.contains('ERROR: The dbm-rollback-count script requires a change set count argument')
+		assertOutputContains('ERROR: The dbm-rollback-count script requires a change set count argument')
 
 		executeAndCheck(['dbm-rollback-count', '1'])
 

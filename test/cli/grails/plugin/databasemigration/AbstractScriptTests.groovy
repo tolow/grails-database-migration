@@ -22,6 +22,10 @@ import java.sql.DriverManager
 
 import org.h2.tools.Server
 
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+
 /**
  * Abstract base class for script tests.
  *
@@ -78,6 +82,17 @@ abstract class AbstractScriptTests extends AbstractCliTestCase {
 			assertFalse 0 == exitCode
 		}
 		verifyHeader()
+	}
+	
+	protected void assertOutputContains(expected) {
+		Pattern p = Pattern.compile(expected)
+		Matcher m = p.matcher(output)
+
+		assertTrue 'output not as expected: "' + output + '"', m.find()
+	}
+	
+	protected void checkRunningDB() {
+		assertOutputContains('(Starting dbm-changelog-sync-sql for database sa @ |Connected to SA@)jdbc:h2:tcp://localhost/./target/testdb/testdb')
 	}
 
 	protected void executeAndCheck(String command) {

@@ -27,8 +27,8 @@ class DbmFutureRollbackSqlTests extends AbstractScriptTests {
 
 		executeAndCheck 'dbm-future-rollback-sql'
 
-		assertTrue output.contains('Starting dbm-future-rollback-sql')
-		assertTrue output.contains('ALTER TABLE PERSON DROP COLUMN ZIPCODE')
-		assertTrue output.contains("DELETE FROM DATABASECHANGELOG  WHERE ID='test-3'")
+		assertOutputContains('(Starting dbm-future-rollback-sql|Rolling Back ChangeSet)')
+		assertOutputContains('ALTER TABLE PERSON DROP COLUMN ZIPCODE')
+		assertOutputContains("DELETE FROM DATABASECHANGELOG  WHERE ID='test-3'")
 	}
 }

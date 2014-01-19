@@ -42,8 +42,7 @@ class DbmDbDocTests extends AbstractScriptTests {
 		assertTrue new File('target/dbdoc/columns/thing.name.html').exists()
 		assertTrue new File('target/dbdoc/columns/thing.version.html').exists()
 
-		assertTrue output.contains(
-			'Starting dbm-db-doc for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 
 	protected void tearDown() {

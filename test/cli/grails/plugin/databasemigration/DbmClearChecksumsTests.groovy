@@ -48,7 +48,6 @@ class DbmClearChecksumsTests extends AbstractScriptTests {
 			assertNull it.tag
 		}
 
-		assertTrue output.contains(
-			'Starting dbm-clear-checksums for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 }

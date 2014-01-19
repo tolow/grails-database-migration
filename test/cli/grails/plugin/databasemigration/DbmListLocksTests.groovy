@@ -29,9 +29,9 @@ class DbmListLocksTests extends AbstractScriptTests {
 
 		executeAndCheck 'dbm-list-locks'
 
-		assertTrue output.contains('Starting dbm-list-locks for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
-		assertTrue output.contains('Database change log locks for SA@jdbc:h2:tcp://localhost/./target/testdb/testdb')
-		assertTrue output.contains('No locks')
+		assertOutputContains('Starting dbm-list-locks for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		assertOutputContains('Database change log locks for SA@jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		assertOutputContains('No locks')
 
 		executeUpdate('update databasechangeloglock set locked=?, lockgranted=?, lockedby=?',
 		              [true, new java.sql.Timestamp(System.currentTimeMillis()), 'cli_test'])

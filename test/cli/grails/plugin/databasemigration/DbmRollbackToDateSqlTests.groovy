@@ -40,7 +40,7 @@ class DbmRollbackToDateSqlTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-rollback-to-date-sql'], false)
-		assertTrue output.contains('ERROR: Date must be specified')
+		assertOutputContains('ERROR: Date must be specified')
 
 		executeAndCheck(['dbm-rollback-to-date-sql',
 			new SimpleDateFormat('yyyy-MM-dd').format(new Date() - 25)])
@@ -73,7 +73,7 @@ class DbmRollbackToDateSqlTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-rollback-to-date-sql'], false)
-		assertTrue output.contains('ERROR: Date must be specified')
+		assertOutputContains('ERROR: Date must be specified')
 
 		def file = new File(CHANGELOG_DIR, 'testRollbackToDateSql_file.sql')
 		file.deleteOnExit()

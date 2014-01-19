@@ -38,7 +38,7 @@ class DbmUpdateCountTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-update-count'], false)
-		assertTrue output.contains('ERROR: The dbm-update-count script requires a change set count argument')
+		assertOutputContains('ERROR: The dbm-update-count script requires a change set count argument')
 
 		executeAndCheck(['dbm-update-count', '2'])
 

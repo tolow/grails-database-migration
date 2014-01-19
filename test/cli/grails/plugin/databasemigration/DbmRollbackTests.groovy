@@ -39,7 +39,7 @@ class DbmRollbackTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-rollback'], false)
-		assertTrue output.contains('ERROR: The dbm-rollback script requires a tag')
+		assertOutputContains('ERROR: The dbm-rollback script requires a tag')
 
 		executeAndCheck(['dbm-rollback', tagName])
 

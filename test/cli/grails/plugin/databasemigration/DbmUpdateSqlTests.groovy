@@ -29,7 +29,7 @@ class DbmUpdateSqlTests extends AbstractScriptTests {
 
 		assertTableCount 1
 
-		assertTrue output.contains(
+		assertOutputContains(
 			'Starting dbm-update-sql for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
 
 		assertTrue output.contains('CREATE TABLE DATABASECHANGELOGLOCK')

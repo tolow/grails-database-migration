@@ -36,7 +36,6 @@ class DbmDropAllTests extends AbstractScriptTests {
 		// now just 2 Liquibase
 		assertTableCount 2
 
-		assertTrue output.contains(
-			'Starting dbm-drop-all for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 }

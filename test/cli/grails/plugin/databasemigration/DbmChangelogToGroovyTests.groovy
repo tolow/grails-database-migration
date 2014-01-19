@@ -32,7 +32,7 @@ class DbmChangelogToGroovyTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-changelog-to-groovy'], false)
-		assertTrue output.contains('ERROR: Must specify the source XML file path')
+		assertOutputContains('ERROR: Must specify the source XML file path')
 
 		file = new File(CHANGELOG_DIR, '/changelog.groovy')
 		file.delete()

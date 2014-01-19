@@ -30,8 +30,7 @@ class DbmChangelogSyncSqlTests extends AbstractScriptTests {
 
 		assertTrue output.contains('CREATE TABLE DATABASECHANGELOG')
 		assertTrue output.contains('INSERT INTO DATABASECHANGELOG')
-
-		assertTrue output.contains(
-			'Starting dbm-changelog-sync-sql for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		
+		checkRunningDB()
 	}
 }

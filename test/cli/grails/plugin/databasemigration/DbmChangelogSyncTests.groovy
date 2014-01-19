@@ -35,7 +35,6 @@ class DbmChangelogSyncTests extends AbstractScriptTests {
 		assertTrue tableNames.contains('databasechangelog')
 		assertTrue tableNames.contains('databasechangeloglock')
 
-		assertTrue output.contains(
-			'Starting dbm-changelog-sync for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 }

@@ -35,8 +35,7 @@ class DbmGenerateGormChangelogTests extends AbstractScriptTests {
 		assertTrue xml.contains('<changeSet ')
 		assertTrue xml.contains('<createTable ')
 
-		assertTrue output.contains(
-			'Starting dbm-generate-gorm-changelog for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 
 	/**
@@ -55,8 +54,7 @@ class DbmGenerateGormChangelogTests extends AbstractScriptTests {
 		assertTrue groovy.contains('changeSet(')
 		assertTrue groovy.contains('createTable(')
 
-		assertTrue output.contains(
-			'Starting dbm-generate-gorm-changelog for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 
 	/**
@@ -70,7 +68,6 @@ class DbmGenerateGormChangelogTests extends AbstractScriptTests {
 		assertTrue output.contains('<changeSet')
 		assertTrue output.contains('<createTable')
 
-		assertTrue output.contains(
-			'Starting dbm-generate-gorm-changelog for database sa @ jdbc:h2:tcp://localhost/./target/testdb/testdb')
+		checkRunningDB()
 	}
 }

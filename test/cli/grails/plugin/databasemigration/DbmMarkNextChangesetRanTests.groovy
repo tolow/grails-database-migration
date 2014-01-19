@@ -25,14 +25,14 @@ class DbmMarkNextChangesetRanTests extends AbstractScriptTests {
 		executeAndCheck(['dbm-update-count', '2'])
 		assertTableCount 4
 
-		assertTrue output.contains('ChangeSet changelog.cli.test.groovy::test-1::burt ran successfully')
-		assertTrue output.contains('ChangeSet changelog.cli.test.groovy::test-2::burt ran successfully')
+		assertOutputContains('ChangeSet changelog.cli.test.groovy::test-1::burt ran successfully')
+		assertOutputContains('ChangeSet changelog.cli.test.groovy::test-2::burt ran successfully')
 
 		executeAndCheck 'dbm-mark-next-changeset-ran'
-		assertTrue output.contains('Starting dbm-mark-next-changeset-ran')
+		assertOutputContains('Starting dbm-mark-next-changeset-ran')
 
-		assertTrue output.contains('Executing EXECUTE database command: INSERT INTO DATABASECHANGELOG')
-		assertTrue output.contains("VALUES ('burt', '', NOW(), 'Add Column', 'EXECUTED', 'changelog.cli.test.groovy', 'test-3', ")
+		assertOutputContains('Executing EXECUTE database command: INSERT INTO DATABASECHANGELOG')
+		assertOutputContains("VALUES ('burt', '', NOW(), 'Add Column', 'EXECUTED', 'changelog.cli.test.groovy', 'test-3', ")
 
 		executeAndCheck 'dbm-update'
 		assertFalse output.contains('ChangeSet changelog.cli.test.groovy::test-3::burt ran successfully')

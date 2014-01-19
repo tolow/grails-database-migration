@@ -36,7 +36,7 @@ class DbmGormDiffTests extends AbstractScriptTests {
 		assertTrue file.exists()
 		file.deleteOnExit()
 
-		assertTrue output.contains('Starting dbm-gorm-diff')
+		assertOutputContains('Starting dbm-gorm-diff')
 
 		assertTableCount 4
 
@@ -69,7 +69,7 @@ class DbmGormDiffTests extends AbstractScriptTests {
 		assertTrue file.exists()
 		file.deleteOnExit()
 
-		assertTrue output.contains('Starting dbm-gorm-diff')
+		assertOutputContains('Starting dbm-gorm-diff')
 
 		assertTableCount 4
 
@@ -96,7 +96,7 @@ class DbmGormDiffTests extends AbstractScriptTests {
 		assertTableCount 4
 
 		executeAndCheck(['dbm-gorm-diff'])
-		assertTrue output.contains('Starting dbm-gorm-diff')
+		assertOutputContains('Starting dbm-gorm-diff')
 
 		assertTableCount 4
 

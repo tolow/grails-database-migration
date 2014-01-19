@@ -59,7 +59,7 @@ class DbmRollbackToDateTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-rollback-to-date'], false)
-		assertTrue output.contains('ERROR: Date must be specified')
+		assertOutputContains('ERROR: Date must be specified')
 
 		executeAndCheck(['dbm-rollback-to-date',
 			new SimpleDateFormat('yyyy-MM-dd').format(new Date() - 15)])

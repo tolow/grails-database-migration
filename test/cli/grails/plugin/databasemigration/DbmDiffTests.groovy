@@ -36,7 +36,7 @@ class DbmDiffTests extends AbstractScriptTests {
 	void testBadParams() {
 		// test missing parameter check
 		executeAndCheck(['dbm-diff'], false)
-		assertTrue output.contains('ERROR: You must specify the environment to diff against')
+		assertOutputContains('ERROR: You must specify the environment to diff against')
 
 		// test same env parameter check
 		executeAndCheck(['dbm-diff', 'dev'], false)

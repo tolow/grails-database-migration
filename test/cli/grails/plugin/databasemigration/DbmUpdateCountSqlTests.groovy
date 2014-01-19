@@ -28,7 +28,7 @@ class DbmUpdateCountSqlTests extends AbstractScriptTests {
 		copyTestChangelog()
 
 		executeAndCheck(['dbm-update-count-sql'], false)
-		assertTrue output.contains('ERROR: The dbm-update-count-sql script requires a change set count argument')
+		assertOutputContains('ERROR: The dbm-update-count-sql script requires a change set count argument')
 
 		executeAndCheck(['dbm-update-count-sql', '2'])
 

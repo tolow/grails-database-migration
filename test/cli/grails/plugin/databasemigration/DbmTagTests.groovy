@@ -31,7 +31,7 @@ class DbmTagTests extends AbstractScriptTests {
 
 		// test parameter check
 		executeAndCheck(['dbm-tag'], false)
-		assertTrue output.contains('ERROR: The dbm-tag script requires a tag')
+		assertOutputContains('ERROR: The dbm-tag script requires a tag')
 
 		executeAndCheck(['dbm-tag', 'tag123'])
 
